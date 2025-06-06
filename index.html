@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        quantum: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        neon: {
+                            pink: '#ec4899',
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                        },
+                        dark: '#020617',
+                        light: '#f8fafc',
+                    },
+                    animation: {
+                        'hologram': 'hologram 4s ease infinite',
+                        'scanline': 'scanline 8s linear infinite',
+                        'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        hologram: {
+                            '0%, 100%': { opacity: 0.8, filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.7))' },
+                            '50%': { opacity: 1, filter: 'drop-shadow(0 0 16px rgba(59, 130, 246, 0.9))' },
+                        },
+                        scanline: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100vh)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 0.8 },
+                            '50%': { opacity: 1, boxShadow: '0 0 16px rgba(59, 130, 246, 0.7)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen grid-pattern">
+    <div class="fixed inset-0 pointer-events-none" id="particles"></div>
+
+    <div class="container mx-auto px-4 py-12 relative z-10">
+        <!-- Quantum Navigation -->
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-bold neon-text">
+                <span class="text-neon-blue">QUANTUM</span><span class="text-neon-purple">UI</span>
+            </div>
+            <div class="flex space-x-8">
+                <a href="#" class="relative group text-quantum-300 hover:text-neon-blue transition-colors">
+                    <span>Modules</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-blue group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#" class="relative group text-quantum-300 hover:text-neon-pink transition-colors">
+                    <span>Systems</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-pink group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#" class="relative group text-quantum-300 hover:text-neon-purple transition-colors">
+                    <span>Protocols</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-purple group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Interface -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Quantum Core -->
+            <div class="lg:col-span-2 holographic-effect rounded-xl p-8 neon-border">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-bold text-neon-blue">QUANTUM CORE</h2>
+                    <div class="flex space-x-4">
+                        <button
+                            class="px-4 py-2 bg-neon-blue/20 text-neon-blue rounded-lg hover:bg-neon-blue/30 transition-colors border border-neon-blue/30">
+                            <i class="fas fa-bolt mr-2"></i>Activate
+                        </button>
+                        <button
+                            class="px-4 py-2 bg-neon-purple/20 text-neon-purple rounded-lg hover:bg-neon-purple/30 transition-colors border border-neon-purple/30">
+                            <i class="fas fa-cog mr-2"></i>Configure
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50">
+                        <div class="text-quantum-300 mb-2">Energy Output</div>
+                        <div class="text-2xl font-bold text-neon-blue">4.8<span
+                                class="text-lg text-quantum-300">GW</span></div>
+                        <div class="h-2 mt-2 bg-quantum-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-neon-blue to-neon-purple rounded-full"
+                                style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50">
+                        <div class="text-quantum-300 mb-2">Stability</div>
+                        <div class="text-2xl font-bold text-neon-pink">92<span class="text-lg text-quantum-300">%</span>
+                        </div>
+                        <div class="h-2 mt-2 bg-quantum-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-neon-pink to-neon-purple rounded-full"
+                                style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50">
+                        <div class="text-quantum-300 mb-2">Entanglement</div>
+                        <div class="text-2xl font-bold text-neon-purple">64<span
+                                class="text-lg text-quantum-300">Q</span></div>
+                        <div class="h-2 mt-2 bg-quantum-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-neon-purple to-neon-blue rounded-full"
+                                style="width: 64%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative h-64 bg-dark/70 rounded-lg overflow-hidden border border-quantum-700/50">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-32 h-32 rounded-full bg-neon-blue/10 border-2 border-neon-blue/30 animate-pulse-glow flex items-center justify-center">
+                            <div
+                                class="w-24 h-24 rounded-full bg-neon-blue/20 border-2 border-neon-blue/40 animate-pulse-glow flex items-center justify-center">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-neon-blue/30 border-2 border-neon-blue/50 animate-pulse-glow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-4 left-4 right-4 bg-dark/80 p-3 rounded-lg border border-quantum-700/50">
+                        <div class="flex justify-between items-center">
+                            <div class="text-quantum-300">Quantum state initialization...</div>
+                            <div class="text-neon-blue font-mono">0x7F3A...B2C9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neural Matrix -->
+            <div class="holographic-effect rounded-xl p-6 neon-border">
+                <h2 class="text-2xl font-bold text-neon-purple mb-6">NEURAL MATRIX</h2>
+
+                <div class="space-y-4">
+                    <div
+                        class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50 hover:border-neon-purple/50 transition-colors cursor-pointer">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="font-medium text-quantum-200">Pattern Recognition</div>
+                            <div class="w-3 h-3 rounded-full bg-neon-blue animate-pulse-glow"></div>
+                        </div>
+                        <div class="text-sm text-quantum-400">Analyzing quantum patterns in real-time</div>
+                    </div>
+
+                    <div
+                        class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50 hover:border-neon-pink/50 transition-colors cursor-pointer">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="font-medium text-quantum-200">Entanglement Sync</div>
+                            <div class="w-3 h-3 rounded-full bg-neon-pink animate-pulse-glow"></div>
+                        </div>
+                        <div class="text-sm text-quantum-400">Synchronizing 14 quantum nodes</div>
+                    </div>
+
+                    <div
+                        class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50 hover:border-neon-blue/50 transition-colors cursor-pointer">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="font-medium text-quantum-200">Temporal Analysis</div>
+                            <div class="w-3 h-3 rounded-full bg-neon-purple animate-pulse-glow"></div>
+                        </div>
+                        <div class="text-sm text-quantum-400">Processing temporal anomalies</div>
+                    </div>
+
+                    <div class="mt-6">
+                        <button
+                            class="w-full py-3 bg-gradient-to-r from-neon-purple to-neon-blue rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Add Neural Module
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quantum Terminal -->
+        <div class="holographic-effect rounded-xl p-6 neon-border mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-neon-blue">QUANTUM TERMINAL</h2>
+                <div class="flex space-x-3">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+            </div>
+
+            <div class="bg-black/80 rounded-lg p-4 font-mono text-sm h-64 overflow-y-auto border border-quantum-700/50">
+                <div class="text-green-400">$ quantum-init --system=nexus --protocol=entanglement</div>
+                <div class="text-quantum-300 ml-4">> Initializing quantum core...</div>
+                <div class="text-green-400 mt-2">$ system-check --modules=all</div>
+                <div class="text-quantum-300 ml-4">> Pattern Recognition: <span class="text-green-400">OK</span></div>
+                <div class="text-quantum-300 ml-4">> Entanglement Sync: <span class="text-yellow-400">SYNCING</span>
+                </div>
+                <div class="text-quantum-300 ml-4">> Temporal Analysis: <span class="text-green-400">OK</span></div>
+                <div class="text-green-400 mt-2">$ connect --node=0x7F3A...B2C9</div>
+                <div class="text-quantum-300 ml-4">> Establishing quantum link...</div>
+                <div class="text-quantum-300 ml-4">> Encryption: <span class="text-purple-400">QUANTUM_KEY</span></div>
+                <div class="text-quantum-300 ml-4">> Connection stabilized at 94.7%</div>
+                <div class="text-green-400 mt-2">$ _</div>
+            </div>
+        </div>
+
+        <!-- Status Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            <div
+                class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50 hover:border-neon-blue/50 transition-colors cursor-pointer group">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="text-quantum-300">Quantum Network</div>
+                    <div class="w-2 h-2 rounded-full bg-neon-blue animate-pulse-glow"></div>
+                </div>
+                <div class="text-xl font-bold text-neon-blue group-hover:text-neon-blue/80 transition-colors">14 Nodes
+                </div>
+            </div>
+            <div
+                class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50 hover:border-neon-pink/50 transition-colors cursor-pointer group">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="text-quantum-300">Data Streams</div>
+                    <div class="w-2 h-2 rounded-full bg-neon-pink animate-pulse-glow"></div>
+                </div>
+                <div class="text-xl font-bold text-neon-pink group-hover:text-neon-pink/80 transition-colors">248 Tb/s
+                </div>
+            </div>
+            <div
+                class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50 hover:border-neon-purple/50 transition-colors cursor-pointer group">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="text-quantum-300">Entanglement Pairs</div>
+                    <div class="w-2 h-2 rounded-full bg-neon-purple animate-pulse-glow"></div>
+                </div>
+                <div class="text-xl font-bold text-neon-purple group-hover:text-neon-purple/80 transition-colors">1.2M
+                </div>
+            </div>
+            <div
+                class="bg-dark/50 rounded-lg p-4 border border-quantum-700/50 hover:border-neon-blue/50 transition-colors cursor-pointer group">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="text-quantum-300">Temporal Stability</div>
+                    <div class="w-2 h-2 rounded-full bg-neon-blue animate-pulse-glow"></div>
+                </div>
+                <div class="text-xl font-bold text-neon-blue group-hover:text-neon-blue/80 transition-colors">99.8%
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
